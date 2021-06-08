@@ -26,7 +26,7 @@ package_group(
     name = "generators",
     packages = [
         "//protoc-gen-grpc-gateway/...",
-        "//protoc-gen-openapiv2/...",
+        "//protoc_gen_openapiv2/...",
     ],
 )
 

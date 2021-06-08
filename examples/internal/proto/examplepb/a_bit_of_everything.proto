@@ -13,7 +13,7 @@ import "examples/internal/proto/sub/message.proto";
 import "examples/internal/proto/sub2/message.proto";
 import "google/protobuf/timestamp.proto";
 import "google/rpc/status.proto";
-import "protoc-gen-openapiv2/options/annotations.proto";
+import "protoc_gen_openapiv2/options/annotations.proto";
 
 option (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_swagger) = {
 	info: {
