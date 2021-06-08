@@ -176,17 +176,17 @@ def _run_proto_gen_openapi(
     return openapi_files
 
 def _proto_gen_openapi_impl(ctx):
-    proto = ctx.attr.proto[ProtoInfo]
+    protos = [src[ProtoInfo] for src in ctx.attr.proto]
     return [
         DefaultInfo(
             files = depset(
                 _run_proto_gen_openapi(
                     actions = ctx.actions,
-                    proto_info = proto,
+                    proto_info = protos,
                     target_name = ctx.attr.name,
                     transitive_proto_srcs = depset(
                         direct = ctx.files._well_known_protos,
-                        transitive = [proto.transitive_sources],
+                        transitive = [proto.transitive_sources for proto in protos],
                     ),
                     protoc = ctx.executable._protoc,
                     protoc_gen_openapiv2 = ctx.executable._protoc_gen_openapi,
