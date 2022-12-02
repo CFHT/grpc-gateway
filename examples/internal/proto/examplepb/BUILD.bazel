@@ -1,7 +1,7 @@
 load("@rules_proto//proto:defs.bzl", "proto_library")
 load("@io_bazel_rules_go//go:def.bzl", "go_library")
 load("@io_bazel_rules_go//proto:def.bzl", "go_proto_library")
-load("@grpc_ecosystem_grpc_gateway//protoc-gen-openapiv2:defs.bzl", "protoc_gen_openapiv2")
+load("@grpc_ecosystem_grpc_gateway//protoc_gen_openapiv2:defs.bzl", "protoc_gen_openapiv2")
 
 package(default_visibility = ["//visibility:public"])
 
@@ -62,7 +62,7 @@ proto_library(
         "//examples/internal/proto/pathenum:pathenum_proto",
         "//examples/internal/proto/sub:sub_proto",
         "//examples/internal/proto/sub2:sub2_proto",
-        "//protoc-gen-openapiv2/options:options_proto",
+        "//protoc_gen_openapiv2/options:options_proto",
         "@com_google_protobuf//:duration_proto",
         "@com_google_protobuf//:empty_proto",
         "@com_google_protobuf//:field_mask_proto",
@@ -103,7 +103,7 @@ go_proto_library(
         "//examples/internal/proto/pathenum",
         "//examples/internal/proto/sub",
         "//examples/internal/proto/sub2",
-        "//protoc-gen-openapiv2/options",
+        "//protoc_gen_openapiv2/options",
         "@com_github_golang_protobuf//descriptor:go_default_library_gen",  # keep
         "@go_googleapis//google/api:annotations_go_proto",
         "@go_googleapis//google/api:httpbody_go_proto",

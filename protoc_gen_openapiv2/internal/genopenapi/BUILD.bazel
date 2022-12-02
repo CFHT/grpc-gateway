@@ -1,6 +1,6 @@
 load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
 
-package(default_visibility = ["//protoc-gen-openapiv2:__subpackages__"])
+package(default_visibility = ["//protoc_gen_openapiv2:__subpackages__"])
 
 go_library(
     name = "genopenapi",
@@ -19,7 +19,7 @@ go_library(
         "//internal/casing",
         "//internal/descriptor",
         "//internal/generator",
-        "//protoc-gen-openapiv2/options",
+        "//protoc_gen_openapiv2/options",
         "@com_github_golang_glog//:glog",
         "@com_github_golang_protobuf//descriptor:go_default_library_gen",
         "@go_googleapis//google/api:annotations_go_proto",
@@ -54,7 +54,7 @@ go_test(
         "//internal/descriptor",
         "//internal/descriptor/openapiconfig",
         "//internal/httprule",
-        "//protoc-gen-openapiv2/options",
+        "//protoc_gen_openapiv2/options",
         "//runtime",
         "@com_github_google_go_cmp//cmp",
         "@go_googleapis//google/api:annotations_go_proto",
@@ -79,5 +79,5 @@ go_test(
 alias(
     name = "go_default_library",
     actual = ":genopenapi",
-    visibility = ["//protoc-gen-openapiv2:__subpackages__"],
+    visibility = ["//protoc_gen_openapiv2:__subpackages__"],
 )
